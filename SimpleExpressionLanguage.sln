@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExpressionLanguage", "SimpleExpressionLanguage\SimpleExpressionLanguage.csproj", "{0E267F31-38F9-4B1E-8C63-4A110A2E5B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsForSimpleExpressionLanguage", "TestsForSimpleExpressionLanguage\TestsForSimpleExpressionLanguage.csproj", "{A57BC0DE-6F27-4E28-BF5E-8F799A4578F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E267F31-38F9-4B1E-8C63-4A110A2E5B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E267F31-38F9-4B1E-8C63-4A110A2E5B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E267F31-38F9-4B1E-8C63-4A110A2E5B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E267F31-38F9-4B1E-8C63-4A110A2E5B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A57BC0DE-6F27-4E28-BF5E-8F799A4578F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A57BC0DE-6F27-4E28-BF5E-8F799A4578F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A57BC0DE-6F27-4E28-BF5E-8F799A4578F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A57BC0DE-6F27-4E28-BF5E-8F799A4578F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
