@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SimpleExpressionLanguage")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Simple Expression Language")]
+[assembly: AssemblyDescription(".NET implementation of SEL(Simple Expression Languag) evaluator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Logicify")]
-[assembly: AssemblyProduct("SimpleExpressionLanguage")]
+[assembly: AssemblyProduct("SEL")]
 [assembly: AssemblyCopyright("Copyright © Logicify2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
