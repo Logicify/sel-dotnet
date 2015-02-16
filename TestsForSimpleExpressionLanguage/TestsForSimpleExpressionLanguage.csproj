@@ -55,6 +55,7 @@
     <Compile Include="TestLocigalOperations.cs" />
     <Compile Include="TestFunctionsWithArg.cs" />
     <Compile Include="TestVariables.cs" />
+    <Compile Include="TestLocalContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleExpressionLanguage\SimpleExpressionLanguage.csproj">

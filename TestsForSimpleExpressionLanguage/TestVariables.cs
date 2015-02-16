@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Logicify.SEL.Impl;
+﻿using Logicify.SEL.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestsForSimpleExpressionLanguage
@@ -12,21 +7,13 @@ namespace TestsForSimpleExpressionLanguage
     public class TestVariables
     {
         [TestMethod]
-        public void String_variable_should_be_interpolated()
+        public void Handler_from_local_context_should_be_available()
         {
             DefaultExpressionEvaluator evaluator = new DefaultExpressionEvaluator();
-            evaluator.Context.RegisterValue("myVar", "SomeVal");
-            var res = evaluator.Evaluate("Value of myVar is $myVar.");
+            DefaultExpressionContext localContext = new DefaultExpressionContext();
+            localContext.RegisterValue("myVar", "SomeVal");
+            var res = evaluator.Evaluate("Value of myVar is $myVar.", localContext);
             Assert.AreEqual("Value of myVar is SomeVal.", res);
-        }
-
-        [TestMethod]
-        public void Expression_in_the_root_should_be_returned_as_result()
-        {
-            DefaultExpressionEvaluator evaluator = new DefaultExpressionEvaluator();
-            evaluator.Context.RegisterValue("myVar", 1);
-            var res = evaluator.Evaluate("$myVar");
-            Assert.AreEqual(1, res);
         }
     }
 }

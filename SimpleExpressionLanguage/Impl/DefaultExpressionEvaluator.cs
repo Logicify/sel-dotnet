@@ -25,11 +25,19 @@ namespace Logicify.SEL.Impl
         {
             // if expression is not a string - nothing to evaluate
             if (expression == null) return null;
-            if (expression.GetType() != typeof(String)) return expression;
+            if (expression.GetType() != typeof(String)) return expression;            
             // Merge localcontext with global.
-            // If there is no local context - use global
-            // TODO: implement me!
-            IExpressionContext expressionContext = Context;
+            // If there is no local context - use global           
+            IExpressionContext expressionContext;
+            if (localContext == null)
+            {
+                localContext = Context;
+            }
+            if (localContext != null && localContext != Context && recursionLevel == 0)
+            {
+                localContext.Inherit(Context);                
+            }
+            expressionContext = localContext;
             Object result = expression;
             Match match = EXPRESSION_REGEX.Match(expression.ToString()); // It is safe enough to cast since we allready detected expression type
             while (match.Success)

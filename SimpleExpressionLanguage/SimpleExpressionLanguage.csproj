@@ -44,11 +44,13 @@
     <Compile Include="Common\IExpressionEvaluator.cs" />
     <Compile Include="Common\IExpressionHandler.cs" />
     <Compile Include="Common\IExpressionValue.cs" />
-    <Compile Include="Common\IInterpolable.cs" />
+    <Compile Include="Common\IHandlerLibrary.cs" />
+    <Compile Include="EvaluatorFactory.cs" />
     <Compile Include="Exceptions\SELException.cs" />
     <Compile Include="Exceptions\SELSyntaxError.cs" />
     <Compile Include="Exceptions\UnknownOperationError.cs" />
     <Compile Include="Handlers\CapitalizeHandler.cs" />
+    <Compile Include="Handlers\Libraries.cs" />
     <Compile Include="Handlers\LogicalOperationsHandler.cs" />
     <Compile Include="Handlers\ValueHandler.cs" />
     <Compile Include="Impl\DefaultExpressionContext.cs" />
