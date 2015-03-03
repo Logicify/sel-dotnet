@@ -8,7 +8,8 @@ namespace Logicify.SEL.Impl
     public class DefaultExpressionEvaluator: IExpressionEvaluator
     {
         private IExpressionContext _context;
-        private readonly Regex EXPRESSION_REGEX = new Regex(@"\$(?<name>\w[\d\w]*)(?<is_func>\((?<arg>.*)?\))?");
+        // new Regex(@"\$(?<name>\w[\d\w]*)(?<is_func>\((?<arg>.*)?(?<-is_func>\)))?").Match("$allOf($not(true), $not(true))")
+        private readonly Regex EXPRESSION_REGEX = new Regex(@"\$(?<name>\w[\d\w]*)(?<arg>\((?>[^()]+|\((?<brackets>)|\)(?<-brackets>))*(?(brackets)(?!))\))?");
 
         public IExpressionContext Context
         {
@@ -47,10 +48,12 @@ namespace Logicify.SEL.Impl
                 IExpressionHandler handler = expressionContext.GetFunctionHandlerByName(expressionName);
                 Object argument = null;
                 // If there is an argument
-                if (match.Groups["is_func"].Success)
+                if (match.Groups["arg"].Success)
                 {
+                    // match.Groups["arg"] - contains an argument with parentheses. We need to remove them first 
+                    var argumentValue = match.Groups["arg"].Value.Length > 2 ? match.Groups["arg"].Value.Substring(1, match.Groups["arg"].Value.Length - 2) : "";
                     // Apply interpolation to the argument
-                    argument = Evaluate(match.Groups["arg"].Value, localContext, recursionLevel + 1);                    
+                    argument = Evaluate(argumentValue, localContext, recursionLevel + 1);                    
                     // Validate it
                     try
                     {

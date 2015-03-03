@@ -1,4 +1,5 @@
-﻿using Logicify.SEL.Handlers;
+﻿using System.Text.RegularExpressions;
+using Logicify.SEL.Handlers;
 using Logicify.SEL.Impl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -46,6 +47,14 @@ namespace TestsForSimpleExpressionLanguage
             evaluator.Context.RegisterValue("myVar", true);                  
             var res = evaluator.Evaluate("$anyOf($not($myVar), $myVar)");
             Assert.AreEqual(true, res);
+        }
+
+        [TestMethod]
+        public void Complex_logical_expression_with_2_exp_args_should_work()
+        {            
+            DefaultExpressionEvaluator evaluator = new DefaultExpressionEvaluator();            
+            var res = evaluator.Evaluate("$allOf($not(true), $not(true))");
+            Assert.AreEqual(false, res);
         }
     }
 
