@@ -17,5 +17,15 @@ namespace TestsForSimpleExpressionLanguage
             Object res = evaluator.Evaluate("Some test string");            
             Assert.AreEqual("Some test string", res);            
         }
+
+        [TestMethod]
+        public void Update_variable_works()
+        {
+            DefaultExpressionEvaluator evaluator = new DefaultExpressionEvaluator();
+            evaluator.Context.RegisterValue("test", 1);
+            evaluator.Context.UpdateValue("test", 2);
+            var res = evaluator.Evaluate("Res: $test.");
+            Assert.AreEqual("Res: 2.", res);
+        }
     }
 }

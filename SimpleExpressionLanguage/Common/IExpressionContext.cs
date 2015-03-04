@@ -11,6 +11,7 @@ namespace Logicify.SEL.Common
     {
         void RegisterHandler(IExpressionHandler functionHandler);
         void RegisterValue(string name, Object value);
+        void UpdateValue(string name, Object value);
         IExpressionHandler GetFunctionHandlerByName(string handlerName);        
         void Inherit(IExpressionContext parentContext);
     }

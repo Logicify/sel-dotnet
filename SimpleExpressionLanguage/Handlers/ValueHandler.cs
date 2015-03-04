@@ -30,6 +30,12 @@ namespace Logicify.SEL.Handlers
             return _value;
         }
 
+        public object CurrentValue
+        {
+            get { return _value; }
+            set { _value = value; }
+        }
+
         public ValueHandler(string name, Object value)
         {
             _name = name;
